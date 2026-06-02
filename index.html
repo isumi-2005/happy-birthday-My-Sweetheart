@@ -1,0 +1,199 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Happy Birthday, My Dragon Trainer! 🐉</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+    <div class="video-bg-container">
+        <video autoplay loop muted playsinline id="bg-video">
+            <source src="toothless-bg.mp4" type="video/mp4">
+        </video>
+        <div class="video-overlay"></div>
+    </div>
+
+    <canvas id="sparkle-canvas"></canvas>
+
+    <div id="lock-screen" class="lock-overlay">
+        <div class="lock-box bounce-animation">
+            <span class="lock-icon">🐉</span>
+            <h2>Dragon Trainer Verification</h2>
+            <p class="code-font">status: waiting_for_alpha // Hint: Anniversary (MMDD) ❤️</p>
+            <input type="password" id="password-input" placeholder="0000" maxlength="4">
+            <button class="pro-btn" onclick="checkPassword()">Befriend Night Fury 🍖</button>
+            <p id="error-message" class="error-text"></p>
+        </div>
+    </div>
+
+    <audio id="bg-music" src="yoursong.mp3" loop></audio>
+    <button id="music-toggle" class="music-btn" onclick="toggleMusic()">🎵 Play Romantic Jams</button>
+
+    <div id="main-content" class="hidden-wrapper">
+        
+        <nav class="navbar">
+            <div class="logo">🚀 function love() { return "Toothless ✨"; }</div>
+            <div class="nav-links">
+                <button class="tab-btn active" onclick="openTab('home')">🏠 Nest</button>
+                <button class="tab-btn" onclick="openTab('memories')">📸 Flight Logs</button>
+                <button class="tab-btn" onclick="openTab('reasons')">💖 Why You</button>
+                <button class="tab-btn" onclick="openTab('coupons')">🎟️ Dragon Vouchers</button>
+                <button class="tab-btn" onclick="openTab('future')">🗺️ Hidden World Roadmap</button>
+                <button class="tab-btn" onclick="openTab('gift')">🎁 Secret Hatch</button>
+                <button class="tab-btn" onclick="openTab('letter')">✉️ Scroll For You</button>
+            </div>
+        </nav>
+
+        <main class="content-container">
+
+            <section id="home" class="tab-content active-content">
+                <span class="badge">🔥 Alpha Status: Maximum Love</span>
+                <h1>Happy Birthday, <span class="cartoon-highlight">My Chief!</span></h1>
+                <p class="subtitle">Welcome to your playground! I built this cozy corner of the internet to celebrate everything that makes you amazing. Let's take off! ☁️</p>
+                <div class="divider"><span>🐉</span></div>
+                
+                <div class="card-grid">
+                    <div class="card" onclick="openTab('memories')">
+                        <div class="icon">✨</div>
+                        <h3>Our Flight Logs</h3>
+                        <p>Take a colorful trip down memory lane...</p>
+                    </div>
+                    <div class="card" onclick="openTab('reasons')">
+                        <div class="icon">🐟</div>
+                        <h3>Reasons Why</h3>
+                        <p>A few adorable things I love about you.</p>
+                    </div>
+                    <div class="card" onclick="openTab('coupons')">
+                        <div class="icon">⚡</div>
+                        <h3>Alpha Coupons</h3>
+                        <p>Redeemable vouchers just for my favorite human!</p>
+                    </div>
+                </div>
+            </section>
+
+            <section id="memories" class="tab-content">
+                <h1>Our Great <span class="cartoon-highlight">Adventures</span></h1>
+                <p class="subtitle">A visual compilation of my absolute favorite core memories with you.</p>
+                <div class="photo-gallery">
+                    <div class="photo-card"><img src="photo1.jpg" alt="Memory 1"><p>The day we met ☕</p></div>
+                    <div class="photo-card"><img src="photo2.jpg" alt="Memory 2"><p>Our favorite date night ✨</p></div>
+                    <div class="photo-card"><img src="photo3.jpg" alt="Memory 3"><p>Laughing with you ❤️</p></div>
+                </div>
+            </section>
+
+            <section id="reasons" class="tab-content">
+                <h1>Reasons Why <span class="cartoon-highlight">I'm Crazy About You</span></h1>
+                <p class="subtitle">Click on each interactive card to peek inside my heart... ✨</p>
+                
+                <div class="accordion-container">
+                    <div class="accordion-item" onclick="toggleAccordion(this)">
+                        <div class="accordion-header"><h3>1. Your Brilliant Mind 🧠</h3> <span>▼</span></div>
+                        <div class="accordion-body"><p>I love how passionate you get when you're solving complex problems or talking about something you build. You are completely brilliant, and it inspires me every single day.</p></div>
+                    </div>
+                    <div class="accordion-item" onclick="toggleAccordion(this)">
+                        <div class="accordion-header"><h3>2. Your Beautiful Heart 💖</h3> <span>▼</span></div>
+                        <div class="accordion-body"><p>You are so kind, safe, and protective over me. No matter how crazy my day gets, being around you makes all the stress melt away instantly.</p></div>
+                    </div>
+                    <div class="accordion-item" onclick="toggleAccordion(this)">
+                        <div class="accordion-header"><h3>3. The Way You Smile at Me 🥰</h3> <span>▼</span></div>
+                        <div class="accordion-body"><p>Every time you catch me looking at you and give me that warm, specific smile, my heart skips a beat. You're my comfort place.</p></div>
+                    </div>
+                </div>
+            </section>
+
+            <section id="coupons" class="tab-content">
+                <h1>Your Premium <span class="cartoon-highlight">Dragon Perks</span></h1>
+                <p class="subtitle">Click "Redeem Voucher" to activate these real-life treats! 😉</p>
+                
+                <div class="coupon-grid">
+                    <div class="coupon-card">
+                        <span class="coupon-badge">Voucher #001</span>
+                        <h3>💆‍♂️ Absolute Full Back Massage</h3>
+                        <p>Valid anytime, especially after a long coding marathon session.</p>
+                        <button class="coupon-btn" onclick="redeemCoupon(this)">Redeem Voucher 🎫</button>
+                    </div>
+                    <div class="coupon-card">
+                        <span class="coupon-badge">Voucher #002</span>
+                        <h3>🍿 Movie Night Executive Choice</h3>
+                        <p>Gives you total authority to pick what we watch, completely argument-free.</p>
+                        <button class="coupon-btn" onclick="redeemCoupon(this)">Redeem Voucher 🎫</button>
+                    </div>
+                    <div class="coupon-card">
+                        <span class="coupon-badge">Voucher #003</span>
+                        <h3>🍕 Free Cheat Meal Delivery</h3>
+                        <p>Brings your favorite dinner safely delivered straight to your desk by me.</p>
+                        <button class="coupon-btn" onclick="redeemCoupon(this)">Redeem Voucher 🎫</button>
+                    </div>
+                </div>
+            </section>
+
+            <section id="future" class="tab-content">
+                <h1>Our Future <span class="cartoon-highlight">Hidden World Roadmap</span></h1>
+                <p class="subtitle">A magical map of milestones and travels I can't wait to conquer alongside you.</p>
+                
+                <div class="roadmap-timeline">
+                    <div class="roadmap-step checked">
+                        <div class="roadmap-bullet">✓</div>
+                        <div class="roadmap-text"><h3>Phase 1: Finding Each Other</h3><p>Successfully launched our love story and created unforgettable core memories. (Completed!)</p></div>
+                    </div>
+                    <div class="roadmap-step">
+                        <div class="roadmap-bullet">✈️</div>
+                        <div class="roadmap-text"><h3>Phase 2: The Next Big Trip Together</h3><p>Packing our bags, escaping reality, and taking a brand new vacation somewhere beautiful overseas.</p></div>
+                    </div>
+                    <div class="roadmap-step">
+                        <div class="roadmap-bullet">🏡</div>
+                        <div class="roadmap-text"><h3>Phase 3: Building Our Perfect Space</h3><p>Designing a warm cozy room with a giant setup for you to program and endless snacks for us.</p></div>
+                    </div>
+                </div>
+            </section>
+
+            <section id="letter" class="tab-content">
+                <h1>A Handwritten Scroll <span class="cartoon-highlight">To You</span></h1>
+                <div class="letter-paper">
+                    <p id="typewriter-text"></p> 
+                </div>
+            </section>
+
+            <section id="gift" class="tab-content">
+                <h1>A Secret <span class="cartoon-highlight">Dragon Cache</span></h1>
+                <p class="subtitle">You didn't think I'd just hand it over without verification, did you? Solve the puzzle to unlock your gift! 😉</p>
+                
+                <div id="puzzle-container" class="gift-box glass-card">
+                    <h3>🧩 Relationship Trivia Quiz</h3>
+                    <p id="puzzle-question">What is my absolute favorite thing about you? (Or enter our first date venue!)</p>
+                    <input type="text" id="puzzle-answer" placeholder="Type your answer here..." autocomplete="off">
+                    <button class="pro-btn" onclick="solvePuzzle()">Verify Identity 🔒</button>
+                    <p id="puzzle-error" class="error-text"></p>
+                </div>
+
+                <div id="terminal-box" class="terminal-container display-none">
+                    <div class="terminal-header">
+                        <span class="dot red"></span><span class="dot yellow"></span><span class="dot green"></span>
+                        <span class="terminal-title">bash - dragon_debugger.sh</span>
+                    </div>
+                    <div class="terminal-body" id="terminal-text"></div>
+                </div>
+
+                <div id="gift-reveal" class="gift-box display-none reveal-animation">
+                    <h2 class="tada-title">🎉 RAWARRRRRRRRR! 🎉</h2>
+                    <h3 class="gift-announcement">You successfully trained your dragon! Here is your official present...</h3>
+                    
+                    <div class="surprise-photo-wrapper">
+                        <img src="my-surprise-photo.png" alt="Surprise for you!">
+                    </div>
+
+                    <div class="gift-details">
+                        <p>❤️🎁 <strong>Your Real Gift:</strong></p>
+                        <p>Type out the real gift here! (e.g., "Check under your pillow," "We are going to a surprise dinner tonight at 7 PM")</p>
+                    </div>
+                </div>
+            </section>
+
+        </main>
+    </div>
+
+    <script src="script.js"></script>
+</body>
+</html>
