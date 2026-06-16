@@ -154,7 +154,7 @@ function solvePuzzle() {
     const puzzleError = document.getElementById('puzzle-error');
     
     // 💡 CHANGE THIS VALUE: Set your secret quiz answer keyword here (all lowercase!)
-    const secretAnswer = "pizza"; 
+    const secretAnswer = "1la"; 
 
     if (userAnswer === secretAnswer) {
         // 1. Hide the puzzle box completely
